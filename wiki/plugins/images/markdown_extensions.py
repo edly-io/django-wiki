@@ -15,7 +15,7 @@ class ImageExtension(markdown.Extension):
 
     def extendMarkdown(self, md, md_globals):
         """ Insert ImagePreprocessor before ReferencePreprocessor. """
-        md.preprocessors.add('dw-images', ImagePreprocessor(md), '>html_block')
+        md.preprocessors.register('dw-images', ImagePreprocessor(md), '>html_block')
 
 class ImagePreprocessor(markdown.preprocessors.Preprocessor):
     """django-wiki image preprocessor - parse text for [image:id align:left|right|center] references. """

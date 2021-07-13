@@ -167,7 +167,7 @@ class Article(models.Model):
     def get_for_object(cls, obj):
         return ArticleForObject.objects.get(object_id=obj.id, content_type=ContentType.objects.get_for_model(obj)).article
 
-    def __unicode__(self):
+    def __str__(self):
         if self.current_revision:
             return self.current_revision.title
         return _('Article without content (%(id)d)') % {'id': self.id}
@@ -280,7 +280,7 @@ class ArticleRevision(BaseRevisionMixin, models.Model):
     #                             help_text=_(u'If set, the article will redirect to the contents of another article.'),
     #                             related_name='redirect_set')
 
-    def __unicode__(self):
+    def __str__(self):
         return "%s (%d)" % (self.title, self.revision_number)
 
     def inherit_predecessor(self, article):

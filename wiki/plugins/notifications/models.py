@@ -13,7 +13,7 @@ from wiki.plugins.notifications import settings
 
 class ArticleSubscription(ArticlePlugin, Subscription):
     
-    def __unicode__(self):
+    def __str__(self):
         return (_("%(user)s subscribing to %(article)s (%(type)s)") % 
                 {'user': self.settings.user.username,
                  'article': self.article.current_revision.title,

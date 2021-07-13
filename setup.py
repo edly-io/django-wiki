@@ -59,7 +59,7 @@ package_data = {
 
 setup(
     name="django-wiki",
-    version="1.0.0",
+    version="1.1.0",
     author="Benjamin Bach",
     author_email="benjamin@overtag.dk",
     description="A wiki system written for the Django framework.",
@@ -82,6 +82,7 @@ setup(
         'Framework :: Django :: 2.2',
         'Framework :: Django :: 3.0',
         'Framework :: Django :: 3.1',
+        'Framework :: Django :: 3.2',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
         'Topic :: Software Development',
         'Topic :: Software Development :: Libraries :: Application Frameworks',

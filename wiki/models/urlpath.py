@@ -131,7 +131,7 @@ class URLPath(MPTTModel):
     class MPTTMeta:
         pass
     
-    def __unicode__(self):
+    def __str__(self):
         path = self.path
         return path if path else ugettext("(root)")
     

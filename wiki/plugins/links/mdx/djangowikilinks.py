@@ -51,7 +51,7 @@ class WikiPathExtension(markdown.Extension):
         WIKI_RE =  r'\[(?P<linkTitle>[^\]]+?)\]\(wiki:(?P<wikiTitle>[a-zA-Z\d\./_-]*)\)'
         wikiPathPattern = WikiPath(WIKI_RE, self.config, md=md)
         wikiPathPattern.md = md
-        md.inlinePatterns.add('djangowikipath', wikiPathPattern, "<reference")
+        md.inlinePatterns.register('djangowikipath', wikiPathPattern, "<reference")
 
 
 class WikiPath(markdown.inlinepatterns.Pattern):

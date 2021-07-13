@@ -18,7 +18,7 @@ class NotificationType(models.Model):
                              blank=True, null=True)
     content_type = models.ForeignKey(ContentType, blank=True, null=True, on_delete=models.CASCADE)
     
-    def __unicode__(self):
+    def __str__(self):
         return self.key
     
     class Meta:
@@ -33,7 +33,7 @@ class Settings(models.Model):
     interval = models.SmallIntegerField(choices=settings.INTERVALS, verbose_name=_('interval'),
                                         default=settings.INTERVALS_DEFAULT)
     
-    def __unicode__(self):
+    def __str__(self):
         return _("Settings for %s") % self.user.username
     
     class Meta:
@@ -51,7 +51,7 @@ class Subscription(models.Model):
                                  help_text=_('Leave this blank to subscribe to any kind of object'))
     send_emails = models.BooleanField(default=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return _("Subscription for: %s") % str(self.settings.user.username)
 
     class Meta:
@@ -97,7 +97,7 @@ class Notification(models.Model):
         
         return objects_created
     
-    def __unicode__(self):
+    def __str__(self):
         return "%s: %s" % (str(self.subscription.settings.user), self.message)
 
     class Meta:

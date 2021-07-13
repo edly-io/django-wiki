@@ -14,7 +14,7 @@ class AttachmentExtension(markdown.Extension):
 
     def extendMarkdown(self, md, md_globals):
         """ Insert AbbrPreprocessor before ReferencePreprocessor. """
-        md.preprocessors.add('dw-attachments', AttachmentPreprocessor(md), '>html_block')
+        md.preprocessors.register('dw-attachments', AttachmentPreprocessor(md), '>html_block')
 
 class AttachmentPreprocessor(markdown.preprocessors.Preprocessor):
     """django-wiki attachment preprocessor - parse text for [attachment:id] references. """

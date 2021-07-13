@@ -39,7 +39,7 @@ class Attachment(ReusablePlugin):
         verbose_name_plural = _('attachments')
         db_table = 'wiki_attachments_attachment'
     
-    def __unicode__(self):
+    def __str__(self):
         return "%s: %s" % (self.article.current_revision.title, self.original_filename)    
         
 def upload_path(instance, filename):
@@ -133,7 +133,7 @@ class AttachmentRevision(BaseRevisionMixin, models.Model):
             self.attachment.current_revision = self
             self.attachment.save()
 
-    def __unicode__(self):
+    def __str__(self):
         return "%s: %s (r%d)" % (self.attachment.article.current_revision.title, 
                                  self.attachment.original_filename,
                                  self.revision_number)    
