@@ -89,7 +89,7 @@ class Create(FormView, ArticleMixin):
                                     'other_read': self.article.other_read,
                                     'other_write': self.article.other_write,
                                     })
-                messages.success(self.request, _(u"New article created: %s") % self.newpath.article.current_revision.title)
+                messages.success(self.request, _(u"New article %s created.") % self.newpath.article.current_revision.title)
 
         # TODO: Handle individual exceptions better and give good feedback.
         except Exception as e:
