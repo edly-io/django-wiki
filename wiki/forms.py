@@ -145,7 +145,7 @@ class SelectWidgetBootstrap(BuildAttrsCompat, forms.Select):
         if k != 'attrs':
             self.noscript_widget.__setattr__(k, value)
     
-    def render(self, name, value, attrs=None, choices=()):
+    def render(self, name, value, attrs=None, choices=(), renderer=None):
         if value is None: value = ''
         final_attrs = self.build_attrs_compat(attrs, name=name)
         output = ["""<div%(attrs)s>"""
